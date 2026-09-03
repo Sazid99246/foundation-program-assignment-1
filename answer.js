@@ -50,16 +50,11 @@ function getCngFare(distance, isNight = false, waitingMinutes = 0) {
     if (distance > 2) {
         distanceCharge += (distance - 2) * 15;
     }
-
     const waitingCharge = waitingMinutes * 2;
-
     let totalFare = distanceCharge + waitingCharge;
-
-
     if (isNight) {
         totalFare *= 1.2;
     }
-
     return totalFare;
 }
 
@@ -83,10 +78,3 @@ const getChaseVerdict = (target, scored, ballsLeft) => {
         return `Need ${runsNeeded} runs in ${ballsLeft} balls | ${verdict}`;
     }
 }
-
-console.log(getChaseVerdict(200, 200, 12));
-console.log(getChaseVerdict(200, 190, 0));
-console.log(getChaseVerdict(100, 90, 12));
-console.log(getChaseVerdict(100, 80, 12));
-console.log(getChaseVerdict(100, 70, 12));
-console.log(getChaseVerdict(150, 149, 1));
